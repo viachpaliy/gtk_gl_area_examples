@@ -1,0 +1,22 @@
+name: gl_area_example
+version: 0.1.0
+
+authors:
+  - viachpaliy <viachpaliy@ukr.net>
+
+targets:
+  gl_area_example:
+    main: src/gl_area_example.cr
+
+crystal: 0.35.1
+
+dependencies:
+  gobject :
+    github: jhass/crystal-gobject
+    version: ~> 0.8.0
+    
+  lib_gl:
+    github: calebuharrison/LibGL
+    branch: master
+
+license: MIT

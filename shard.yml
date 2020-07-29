@@ -1,0 +1,9 @@
+name: gtk_gl_area_examples
+version: 0.1.0
+
+authors:
+  - Viacheslav Paliy <viachpaliy@ukr.net>
+
+crystal: 0.35.1
+
+license: MIT
