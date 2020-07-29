@@ -1,0 +1,10 @@
+version: 2.0
+shards:
+  gobject:
+    git: https://github.com/jhass/crystal-gobject.git
+    version: 0.8.0
+
+  lib_gl:
+    git: https://github.com/calebuharrison/LibGL.git
+    version: 0.1.0+git.commit.fed2ca7f6cd15efea94458b234c3ca5b0a8ffc5e
+
