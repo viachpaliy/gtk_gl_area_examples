@@ -2,22 +2,6 @@ require "gobject/gtk/autorun"
 require "lib_gl"
 require "./shaderprogram.cr"
 
-def triangle() : Array(Float32)
-
-  vertex_arr = [
-    -0.5, -0.5, 0.0,
-     0.5, -0.5, 0.0,
-     0.0,  0.5, 0.0,
-  ]
-
-  vertices = [] of Float32
-  vertex_arr.each do |v|
-    vertices << v.to_f32
-  end
-
-  return vertices
-end
-
 class GlAreaApp
   @window : Gtk::Window
   @gl_area : Gtk::GLArea
@@ -45,7 +29,11 @@ class GlAreaApp
     window_opacity = 1.0
 
     # data
-    vertices = triangle()
+    vertices =  [
+      -0.5, -0.5, 0.0,
+       0.5, -0.5, 0.0,
+       0.0,  0.5, 0.0,
+    ] of Float32
 
     nr_vertices = (vertices.size/3).to_i
     #

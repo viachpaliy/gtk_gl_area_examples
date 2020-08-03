@@ -2,33 +2,6 @@ require "gobject/gtk/autorun"
 require "lib_gl"
 require "./shaderprogram.cr"
 
-def twotriangles() : {Array(Float32), Array(Int32)}
-
-  vertices = [
-               0.5,  0.5,  0.0,
-               0.5, -0.5,  0.0,
-              -0.5, -0.5,  0.0,
-              -0.5,  0.5,  0.0
-            ]
-
-  indices = [
-              0,1,3, # first triangle
-              1,2,3  # second triangle
-            ]
-
-  vertex_arr = [] of Float32
-  vertices.each do |v|
-    vertex_arr << v.to_f32
-  end
-
-  index_arr = [] of Int32
-  indices.each do |v|
-    index_arr << v.to_i32
-  end
-
-  return vertex_arr, index_arr
-end
-
 class GlAreaApp
   @window : Gtk::Window
   @gl_area : Gtk::GLArea
@@ -56,8 +29,18 @@ class GlAreaApp
     window_opacity = 1.0
 
     # data
-    vertices, indices  = twotriangles()
-
+    vertices = [
+               0.5,  0.5,  0.0,
+               0.5, -0.5,  0.0,
+              -0.5, -0.5,  0.0,
+              -0.5,  0.5,  0.0
+            ] of Float32
+            
+    indices = [
+              0,1,3, # first triangle
+              1,2,3  # second triangle
+            ] of Int32        
+    
     nr_vertices = (vertices.size/3).to_i
     nr_indices  = indices.size
 
